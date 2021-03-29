@@ -28,3 +28,12 @@ tasks.withType<KotlinCompile>() {
 application {
     mainClassName = "MainKt"
 }
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "MainKt"
+    }
+    configurations["compileClasspath"].forEach { file: File ->
+        from(zipTree(file.absoluteFile))
+    }
+}
