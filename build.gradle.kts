@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.security:spring-security-core:5.1.1.RELEASE")
     testImplementation(kotlin("test-junit"))
 }
 
